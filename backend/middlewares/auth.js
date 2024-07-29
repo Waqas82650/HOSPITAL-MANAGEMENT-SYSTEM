@@ -30,7 +30,7 @@ export const isPatientAuthenticated=catchAsyncErrors(async(req,res,next)=>{
 
     if(!token)
     {
-        return next(new ErrorHandler("Patient Not Authenticared!",400))
+        return next(new ErrorHandler("Patient Not Authenticated!",400))
     }
 const decoded= jwt.verify(token,process.env.JWT_SECRET_KEY)
 
